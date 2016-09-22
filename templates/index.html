@@ -1,1 +1,45 @@
-<!--html file -->
+{% extends "base.html" %}
+
+
+{% block scripts %}
+    {{ super() }}
+<script type="text/javascript">
+
+    function showprice() {
+        
+        var input = document.getElementById('intitle').value;
+        var obj = new XMLHttpRequest();
+        obj.open("GET", "/gbooks/"+input, true); 
+        obj.onreadystatechange = function () {
+            if (obj.readyState == 4 && obj.status == 200) {
+                dict = JSON.parse(obj.responseText);
+                if (dict["price"] != "NOT_FOR_SALE") {
+                    document.getElementById('price').innerHTML = dict["title"] + " is for sale! At: " + dict["price"];
+                } else {
+                    document.getElementById('price').innerHTML = "No sale info found for " + dict["title"];
+                }
+              
+            }
+        };
+        obj.send();
+    };
+
+</script>
+{% endblock %}
+
+{% block content %}
+
+<body>
+
+<div class='container'>
+<h1> tExchange </h1>
+<p> Find book on Amazon </p>
+<input id="intitle"> </input>
+<button onclick="showprice()"> Search </button>
+<div>
+<p id="price"></p>
+</div class="container">
+
+
+</body>
+{% endblock %}
