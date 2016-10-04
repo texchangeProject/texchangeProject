@@ -26,10 +26,10 @@ def get_price(search):
     quotestr += "&ResponseGroup=Offers"
     quotestr += "&IdType=ASIN"
     quotestr += "&ItemId=B00KOKTZLQ"
-    #quotestr += "&AssociateTag=[Your_AssociateTag]"
+    quotestr += "&AssociateTag=[Your_AssociateTag]"
     quotestr += "&AWSAccessKeyId=['AKIAIJPXF347YBUNCV7A']"
     quotestr += "&Timestamp=["+str(timestamp)+"]"
-    #quotestr += "&Signature=[Request_Signature]"
+    quotestr += "&Signature=[Request_Signature]"
     res = requests.get(quotestr)
     dct = json.loads(res.text)
     print(dct)

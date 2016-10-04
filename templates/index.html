@@ -1,11 +1,7 @@
-{% extends "base.html" %}
 
-
-{% block scripts %}
-    {{ super() }}
 <script type="text/javascript">
 
-    function showprice() {
+    function showbook() {
         
         var input = document.getElementById('intitle').value;
         var obj = new XMLHttpRequest();
@@ -24,10 +20,11 @@
         obj.send();
     };
 
-</script>
-{% endblock %}
+    $(document).ready(function(){
+        $("#msgid").html("This is Hello World by JQuery");
+        });
 
-{% block content %}
+</script>
 
 <body>
 
@@ -35,11 +32,22 @@
 <h1> tExchange </h1>
 <p> Find book on Amazon </p>
 <input id="intitle"> </input>
-<button onclick="showprice()"> Search </button>
+<button onclick="showbook()"> Search </button>
 <div>
 <p id="price"></p>
 </div class="container">
 
+<div>
+<p id="msgid"></p>
+</div>
+
 
 </body>
-{% endblock %}
+
+<p> Hello World </p>
+
+
+
+
+
+

@@ -1,21 +1,22 @@
-{% extends "bootstrap/base.html" %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>tExchange</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="jquery-1.2.6.min.js"></script>-->
+    <script type="text/javascript" src="loadpage.js"></script>
+    
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-
-    {% block title %}tExchange{% endblock %}
-
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+  <title> tExchange </title>
 </head>
 
-{% block navbar %}
 
+<body>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -44,6 +45,8 @@
 
 </nav> 
 
+<div id="loadpage"></div>
+<button type="button" id="button">Click</button>
 
-{% endblock %}
+</body>
 </html>
